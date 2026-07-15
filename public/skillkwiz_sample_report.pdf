@@ -1,0 +1,93 @@
+%PDF-1.4
+%
+1 0 obj
+<<
+/Title (SkillKwiz Skill Assessment Report)
+/Author (SkillKwiz)
+/Subject (Verified Assessment Report)
+/Keywords (SkillKwiz, Assessment, Report)
+/Creator (SkillKwiz PDF Generator)
+/Producer (SkillKwiz)
+/CreationDate (D:20260715200000)
+>>
+endobj
+2 0 obj
+<<
+/Type /Catalog
+/Pages 3 0 R
+>>
+endobj
+3 0 obj
+<<
+/Type /Pages
+/Kids [4 0 R]
+/Count 1
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Parent 3 0 R
+/MediaBox [0 0 612 792]
+/Contents 5 0 R
+/Resources <<
+/Font <<
+/F1 6 0 R
+>>
+>>
+>>
+endobj
+5 0 obj
+<<
+/Length 320
+>>
+stream
+BT
+/F1 24 Tf
+70 700 Td
+(SkillKwiz Candidate Assessment Report) Tj
+/F1 12 Tf
+0 -40 Td
+(Candidate Name: Robert Jane) Tj
+0 -20 Td
+(Assessment Date: July 15, 2026) Tj
+0 -20 Td
+(Status: Verified) Tj
+0 -30 Td
+(Skills Tested:) Tj
+0 -20 Td
+(  - C# ......................................... Percentile: 85%) Tj
+0 -20 Td
+(  - SQL ........................................ Percentile: 90%) Tj
+0 -20 Td
+(  - React ...................................... Percentile: 82%) Tj
+0 -40 Td
+(Verified Assessment conducted in a Secure Center with Candidate Authentication.) Tj
+ET
+endstream
+endobj
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000196 00000 n 
+0000000247 00000 n 
+0000000308 00000 n 
+0000000438 00000 n 
+0000000808 00000 n 
+trailer
+<<
+/Size 7
+/Root 2 0 R
+/Info 1 0 R
+>>
+startxref
+879
+%%EOF
