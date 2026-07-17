@@ -1,7 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import { Play } from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function AboutPage() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handleVideoPlay = () => {
+    setIsPlaying(true);
+  };
+
+  const handleVideoPause = () => {
+    setIsPlaying(false);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -208,12 +229,20 @@ export default function AboutPage() {
       {/* Video Section */}
       <section className="w-full bg-white py-12">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="relative">
+          <div className="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg">
             <video
-              className="w-full h-auto rounded-lg"
-              controls
-              preload="none"
+              ref={videoRef}
+              className="w-full h-auto"
+              controls={isPlaying}
+              preload="metadata"
               poster="/images/aboutpage/about_video.png"
+              onPlay={handleVideoPlay}
+              onPause={handleVideoPause}
+              onClick={() => {
+                if (!isPlaying) {
+                  handlePlayClick();
+                }
+              }}
             >
               <source
                 src="/images/aboutpage/about_video.mp4"
@@ -221,11 +250,16 @@ export default function AboutPage() {
               />
               Your browser does not support the video tag.
             </video>
-            {/* <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 bg-[#00418d] rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-90 transition-all">
-                <Play className="w-10 h-10 text-white ml-1" />
+            {!isPlaying && (
+              <div 
+                className="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/40 transition-colors duration-300"
+                onClick={handlePlayClick}
+              >
+                <div className="w-20 h-20 bg-[#00418d] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 hover:bg-[#00316d] transition-all duration-300 shadow-2xl">
+                  <Play className="w-10 h-10 text-white fill-white ml-1" />
+                </div>
               </div>
-            </div> */}
+            )}
           </div>
         </div>
       </section>

@@ -3,11 +3,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,7 +25,11 @@ export default function SiteHeader() {
 
   return (
     <div className="w-full fixed top-4 left-0 z-50 px-4 md:px-8">
-      <nav className="max-w-7xl mx-auto bg-black/25 backdrop-blur-md border border-white/10 rounded-full text-white shadow-lg transition-all duration-300">
+      <nav className={`max-w-7xl mx-auto backdrop-blur-md border rounded-full text-white shadow-lg transition-all duration-300 ${
+        isScrolled 
+          ? "bg-slate-950/85 border-white/5 py-1.5" 
+          : "bg-black/25 border-white/10 py-2.5"
+      }`}>
         <div className="flex md:grid md:grid-cols-3 items-center justify-between px-6 py-2.5">
           {/* Column 1: Logo */}
           <div className="flex justify-start">
